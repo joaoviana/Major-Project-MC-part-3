@@ -1,0 +1,66 @@
+<a-entity id="wire-frame-occlusion" visible="true">
+  <a-entity mixin="wall-occlusion" position="0 10 0"></a-entity>
+  <a-entity
+    mixin="wall-occlusion"
+    position="-25 10 -25"
+    rotation="0 90 0"
+  ></a-entity>
+  <a-entity
+    wireframe="true"
+    mixin="wall-occlusion"
+    position="25 10 -25"
+    rotation="0 -90 0"
+  ></a-entity>
+  <a-entity
+    wireframe="true"
+    mixin="wall-occlusion"
+    position="0 10 -50"
+  ></a-entity>
+  <a-entity
+    mixin="ground-occlusion"
+    color="green"
+    rotation="90 0 0"
+    position="0 20 -25"
+  ></a-entity>
+</a-entity>
+
+<a-sphere
+  id="sound-obj"
+  occlusion-sound-source-3
+  class="soundsource3"
+  mixin="occlusion-object"
+  position="0 3 -27"
+  radius="2"
+  material="color:#FFB6C1"
+></a-sphere>
+
+<a-obj-model
+  src="#human-obj"
+  mtl="#human-mtl"
+  class="soundsource1"
+  position="0 0 -30"
+  occlusion-sound-source-1
+></a-obj-model>
+
+<a-obj-model
+  src="#human-obj"
+  mtl="#human-mtl"
+  position="10 0 -7"
+  class="soundsource2"
+  occlusion-sound-source-2
+></a-obj-model>
+
+
+<a-plane
+go-back
+class="menu"
+id="go-back-selection-menu"
+material="color:#909aa2;opacity:1"
+width="1.7"
+height="0.6"
+rotation="0 -10 0"
+position="7 3.5 -10.1"
+geometry=""
+>
+<a-text position="-0.25 0 1" width="2.4" value="Go back?">  </a-text>
+</a-plane>
