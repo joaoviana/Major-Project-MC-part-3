@@ -38,6 +38,7 @@ function initOcclusionAudioContext() {
   humanSound.crossOrigin = "anonymous";
   humanSound.load();
   humanSoundSource = occlusionAudioContext.createMediaElementSource(humanSound);
+  // humanSoundSource.setDirectivityPattern(0.5, 5);
 
   //human sound 2
   // Create an audio element. Feed into audio graph.
@@ -46,6 +47,7 @@ function initOcclusionAudioContext() {
   human2Sound.crossOrigin = "anonymous";
   human2Sound.load();
   human2SoundSource = occlusionAudioContext.createMediaElementSource(human2Sound);
+ 
 
   //sine sound 
   // Create an audio element. Feed into audio graph.
@@ -57,14 +59,17 @@ function initOcclusionAudioContext() {
   // Create a Source, connect desired audio input to it.
   occlusionSource1 = occlusionScene.createSource();
   occlusionSource1.setGain(0.7);
+  occlusionSource1.setDirectivityPattern(0.7, 10);
   humanSoundSource.connect(occlusionSource1.input);
 
   occlusionSource2 = occlusionScene.createSource();
   occlusionSource2.setGain(0.7);
+  occlusionSource2.setDirectivityPattern(0.7, 10);
   human2SoundSource.connect(occlusionSource2.input);
   
   occlusionSource3 = occlusionScene.createSource();
-  occlusionSource3.setGain(1);
+  occlusionSource3.setGain(1.3);
+  occlusionSource3.setSourceWidth(360);
   sineSoundSource.connect(occlusionSource3.input);
 
   audioReadyOcclusion = true;
@@ -80,10 +85,10 @@ AFRAME.registerComponent("occlusion-sound-source-1", {
   tick: function() {
     var cameraEl = this.el.sceneEl.camera.el;
     if (occlusionSource1) {
-      occlusionSource1.setFromMatrix(new THREE.Matrix4().getInverse(new THREE.Matrix4().multiplyMatrices(
+      occlusionSource1.setFromMatrix(new THREE.Matrix4().multiplyMatrices(
           new THREE.Matrix4().getInverse(this.el.object3D.matrixWorld),
           cameraEl.object3D.matrixWorld)
-          ));
+          );
     }
   }
 });
@@ -99,10 +104,10 @@ AFRAME.registerComponent("occlusion-sound-source-2", {
   tick: function() {
     var cameraEl = this.el.sceneEl.camera.el;
     if (occlusionSource2) {
-      occlusionSource2.setFromMatrix(new THREE.Matrix4().getInverse(new THREE.Matrix4().multiplyMatrices(
+      occlusionSource2.setFromMatrix(new THREE.Matrix4().multiplyMatrices(
           new THREE.Matrix4().getInverse(this.el.object3D.matrixWorld),
           cameraEl.object3D.matrixWorld)
-          ));
+          );
     }
   }
 });

@@ -1,11 +1,13 @@
-<a-text id="learn-menu-1-title" material="shader:flat" width="4" rotation="0 0 0" position="-.5 2.8 -2.5" value="Select a skill to learn" text=""></a-text> 
-<a-entity id="learn-menu-1-entity" class="menu" >
-    <a-box class="learn-menu-1-box menu" learn-menu-selection animate-menu-on-hover  material="color:#909aa2;opacity:0.9" rotation="0 0 0" position="0 1.8 -2.5" scale="1 1 0.05" geometry="">
-        <a-text width="4" position="-.4 0 1" value="Occlusion" text=""></a-text>  
-    </a-box>
-    <a-box class="learn-menu-1-box menu" learn-menu-selection animate-menu-on-hover material="color:#909aa2;opacity:0.9" rotation="0 0 0" position="1.7 1.8 -2.5" scale="1 1 0.05" geometry="">
-        <a-text width="4" position="-.4 0.2 1 " value="Late " text=""></a-text>  
-        <a-text width="4" position="-.4 -0.1 1 " value="Reflections" text=""></a-text> 
-    </a-box>
+<a-text id="learn-menu-1-title" material="shader:flat" width="4" rotation="0 0 0" position="-.5 2.8 -2.5"
+    value="Select a skill to learn" text=""></a-text>
+<a-entity id="learn-menu-1-entity" class="menu">
+    <a-plane class="learn-menu-1-box menu" learn-menu-selection material="color:#909aa2;opacity:0.9"
+        rotation="0 0 0" position="-1.5 1.8 -2.5" scale="1 1 0.05" geometry="" width="2">
+        <a-text width="4" position="-.4 0 1" value="Occlusion" text=""></a-text>
+    </a-plane>
+    <a-plane class="learn-menu-1-box menu" learn-menu-selection material="color:#909aa2;opacity:0.9" rotation="0 0 0"
+        position="1.7 1.8 -2.5" scale="1 1 0.05" geometry="" width="2">
+        <a-text width="4" position="-.4 0.2 1 " value="Late " text=""></a-text>
+        <a-text width="4" position="-.4 -0.1 1 " value="Reflections" text=""></a-text>
+    </a-plane>
 </a-entity>
-

@@ -1,5 +1,3 @@
-//cave scene - with a mermaid inside it
-
 let caveAudioContext;
 let caveScene;
 let caveSource;
@@ -39,14 +37,11 @@ function initCaveAudioContext() {
   mermaidCaveSound.crossOrigin = "anonymous";
   mermaidCaveSound.load();
   mermaidCaveSoundSource = caveAudioContext.createMediaElementSource(mermaidCaveSound);
-  console.log('sound: ', mermaidCaveSound)
-  console.log('sound source: ', mermaidCaveSoundSource)
   //mermaid sound source late reflections: [3.4713995456695557, 3.628162384033203, 3.4498541355133057, 10.031046867370605, 16.801977157592773, 16.65700912475586, 9.47618293762207, 5.426042079925537, 1.875927209854126]
 
   caveSource = caveScene.createSource();
   caveSource.setGain(1.3);
   mermaidCaveSoundSource.connect(caveSource.input);
-  console.log('ra source: ', caveSource)
 
    // storm sea sound
   // Create an audio element. Feed into audio graph.
