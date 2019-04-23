@@ -22,12 +22,9 @@ AFRAME.registerComponent("learn-menu-selection", {
             );
             initOcclusionAudioContext();
            //initialising the occlusion audio context
-          //
         } else if (menuSelected == "Late") {
-          console.log('here')
-          
-          ambientLight.setAttribute('light', 'intensity: 0.3');
-          directionalLight.setAttribute('light', 'intensity: 0.5');
+          ambientLight.setAttribute('light', 'intensity: 0');
+          directionalLight.setAttribute('light', 'intensity: 0');
           sky.setAttribute('visible', 'true');
           sky.setAttribute('material','topColor: 0 0 0');
           sky.setAttribute('material','bottomColor: 20 20 20');
@@ -36,10 +33,10 @@ AFRAME.registerComponent("learn-menu-selection", {
           environment.setAttribute('environment', 'skyColor: #111');
           environment.setAttribute('environment', 'preset: threetowers');
           environment.setAttribute('environment', 'groundTexture: walkernoise');
-          environment.setAttribute('environment', 'fog: 0.03');
+          environment.setAttribute('environment', 'fog: 2');
           environment.setAttribute('environment', 'dressing: false');
           environment.setAttribute('environment', 'dressingAmount: 0');
-         
+          sceneEl.setAttribute('fog', "type: exponential; density: 0.15; color: #111;");
           mask.setAttribute(
             "template",
             "src",
