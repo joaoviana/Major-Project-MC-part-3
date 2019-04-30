@@ -90,7 +90,7 @@ function initCaveAudioContext() {
     stormSound.play();
     mermaidCaveSound.setAttribute('loop', true);
     mermaidCaveSound.play();
-  }, 64000);
+  }, 90000);
 }
 
 AFRAME.registerComponent("storm-sound-source", {

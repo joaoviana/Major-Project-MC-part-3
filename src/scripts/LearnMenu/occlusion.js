@@ -106,7 +106,7 @@ function initOcclusionAudioContext() {
     human2Sound.play();
     sineSound.setAttribute('loop', true);
     sineSound.play();
-  }, 74000);
+  }, 90000);
 }
 
 AFRAME.registerComponent("occlusion-sound-source-1", {
