@@ -1,12 +1,17 @@
 let occlusionAudioContext;
 let occlusionScene;
+
 let humanSound;
 let humanSoundSource;
 let human2Sound;
 let human2SoundSource;
 let sineSound;
 let sineSoundSource;
-let occlusionSource1, occlusionSource2, occlusionSource3;
+
+let informationOccSound;
+let informationOccSoundSource;
+
+let occlusionSource1, occlusionSource2, occlusionSource3, occlusionSource4;
 let audioReadyOcclusion = false;
 
 function initOcclusionAudioContext() {
@@ -56,6 +61,15 @@ function initOcclusionAudioContext() {
   sineSound.crossOrigin = "anonymous";
   sineSound.load();
   sineSoundSource = occlusionAudioContext.createMediaElementSource(sineSound);
+
+  // information recording sound
+  // Create an audio element. Feed into audio graph.
+  informationOccSound = document.createElement("audio");
+  informationOccSound.src = "./soundFiles/occlusion-menu.m4a";
+  informationOccSound.crossOrigin = "anonymous";
+  informationOccSound.load();
+  informationOccSoundSource = occlusionAudioContext.createMediaElementSource(informationOccSound);
+
   // Create a Source, connect desired audio input to it.
   occlusionSource1 = occlusionScene.createSource();
   occlusionSource1.setGain(0.7);
@@ -72,14 +86,32 @@ function initOcclusionAudioContext() {
   occlusionSource3.setSourceWidth(360);
   sineSoundSource.connect(occlusionSource3.input);
 
-  audioReadyOcclusion = true;
+  occlusionSource4 = occlusionScene.createSource();
+  occlusionSource4.setGain(1.3);
+  occlusionSource4.setSourceWidth(360);
+  informationOccSoundSource.connect(occlusionSource4.input);
+
+  setTimeout(() => {
+    // play the sound recording
+    informationOccSound.play();
+  }, 3000);
+
+  setTimeout(() => {
+    // after a while, set the audio ready occlusion to true;
+    console.log('audio is ready');
+    audioReadyOcclusion = true;
+    humanSound.setAttribute('loop', true);
+    humanSound.play();
+    human2Sound.setAttribute('loop', true);
+    human2Sound.play();
+    sineSound.setAttribute('loop', true);
+    sineSound.play();
+  }, 74000);
 }
 
 AFRAME.registerComponent("occlusion-sound-source-1", {
   init: function() {
     this.wpVector = new THREE.Vector3();
-    humanSound.setAttribute('loop', true);
-    humanSound.play();
   },
 
   tick: function() {
@@ -96,9 +128,6 @@ AFRAME.registerComponent("occlusion-sound-source-1", {
 AFRAME.registerComponent("occlusion-sound-source-2", {
   init: function() {
     this.wpVector = new THREE.Vector3();
-    var isPlaying = false;
-    human2Sound.setAttribute('loop', true);
-    human2Sound.play();
   },
 
   tick: function() {
@@ -115,8 +144,6 @@ AFRAME.registerComponent("occlusion-sound-source-2", {
 AFRAME.registerComponent("occlusion-sound-source-3", {
   init: function() {
     this.wpVector = new THREE.Vector3();
-    sineSound.setAttribute('loop', true);
-    sineSound.play();
   },
 
   tick: function() {

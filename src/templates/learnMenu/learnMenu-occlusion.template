@@ -6,10 +6,10 @@
   <a-entity mixin="ground-occlusion" color="green" rotation="90 0 0" position="0 20 -25"></a-entity>
 </a-entity>
 
-<a-sphere id="sound-obj" occlusion-sound-source-3 class="soundsource3" mixin="occlusion-object" position="0 3 -27"
+<a-sphere id="sound-obj" occlusion-sound-source-3 class="soundsource3" mixin="occlusion-object" position="0 3 -24"
   radius="2" material="color:#FFB6C1"></a-sphere>
 
-<a-obj-model src="#human-obj" mtl="#human-mtl" class="soundsource1" position="0 0 -24" occlusion-sound-source-1>
+<a-obj-model src="#human-obj" mtl="#human-mtl" class="soundsource1" position="0 0 -27" occlusion-sound-source-1>
 </a-obj-model>
 
 <a-obj-model src="#human-obj" mtl="#human-mtl" position="10 0 -7" class="soundsource2" occlusion-sound-source-2>

@@ -6,23 +6,23 @@
   <a-entity mixin="ground-occlusion" color="green" rotation="90 0 0" position="0 20 -25"></a-entity>
 </a-entity>
 
-<a-torus id="lr1" late-reflection-1 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.1"
+<a-torus id="lr1" late-reflection-1 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.01"
   position="9.5 0.4 -40"></a-torus>
-<a-torus id="lr2" late-reflection-2 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.1"
+<a-torus id="lr2" late-reflection-2 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.01"
 position="9.5 0.4 -40"></a-torus>
-<a-torus id="lr3" late-reflection-3 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.1"
+<a-torus id="lr3" late-reflection-3 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.01"
 position="9.5 0.4 -40"></a-torus>
-<a-torus id="lr4" late-reflection-4 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.1"
+<a-torus id="lr4" late-reflection-4 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.01"
 position="9.5 0.4 -40"></a-torus>
-<a-torus id="lr5" late-reflection-5 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.1"
+<a-torus id="lr5" late-reflection-5 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.01"
 position="9.5 0.4 -40"></a-torus>
-<a-torus id="lr6" late-reflection-6 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.1"
+<a-torus id="lr6" late-reflection-6 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.01"
 position="9.5 0.4 -40"></a-torus>
-<a-torus id="lr7" late-reflection-7 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.1"
+<a-torus id="lr7" late-reflection-7 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.01"
 position="9.5 0.4 -40"></a-torus>
-<a-torus id="lr8" late-reflection-8 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.1"
+<a-torus id="lr8" late-reflection-8 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.01"
 position="9.5 0.4 -40"></a-torus>
-<a-torus id="lr9" late-reflection-9 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.1"
+<a-torus id="lr9" late-reflection-9 color="#ffffff" arc="0" rotation="90 90 0" radius="1" radius-tubular="0.01"
 position="9.5 0.4 -40"></a-torus>
 
 <a-entity mixin="late-reflections-object" position="9.5 2.5 -40" rotation="0 180 0" scale="3 3 3"
